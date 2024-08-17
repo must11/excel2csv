@@ -7,11 +7,17 @@ import java.io.File;
 public class ExcelDeal {
 
     public static void toCSV(String source, String target) {
-        EasyExcel.read(source, new NoModelDataListener(target)).sheet().doRead();
+        EasyExcel.read(source, new NoModelDataListener(target))
+                .sheet()
+                .headRowNumber(0)
+                .doRead();
     }
 
     public static void toCSV(File source, String target) {
-        EasyExcel.read(source, new NoModelDataListener(target)).sheet().doRead();
+        EasyExcel.read(source, new NoModelDataListener(target))
+                .sheet()
+                .headRowNumber(0)
+                .doRead();
     }
 
 }
